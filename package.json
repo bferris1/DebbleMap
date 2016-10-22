@@ -1,0 +1,63 @@
+{
+    "author": "Ben Ferris",
+    "dependencies": {},
+    "keywords": [],
+    "name": "debblemap",
+    "pebble": {
+        "capabilities": [
+            "location",
+            "configurable"
+        ],
+        "displayName": "DebbleMap",
+        "enableMultiJS": true,
+        "messageKeys": [],
+        "projectType": "native",
+        "resources": {
+            "media": [
+                {
+                    "file": "images/dm_icon_25_bw.png",
+                    "menuIcon": true,
+                    "name": "BUS_ICON_BLACK",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/dm_icon_25 .png",
+                    "name": "BUS_ICON_25",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/warning.png",
+                    "name": "WARNING",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/bus_white.png",
+                    "name": "BUS_ICON_WHITE",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/bus_bw.png",
+                    "name": "BUS_BW_ICON",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                }
+            ]
+        },
+        "sdkVersion": "3",
+        "targetPlatforms": [
+            "aplite",
+            "basalt",
+            "chalk",
+            "diorite"
+        ],
+        "uuid": "a4b7bd3a-9445-4536-af00-ce9a5dc955dc",
+        "watchapp": {
+            "watchface": false
+        }
+    },
+    "version": "1.13.0"
+}
