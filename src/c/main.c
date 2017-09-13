@@ -14,7 +14,7 @@ Window *splash_window;
 static GBitmap *s_bus_icon;
 static BitmapLayer *s_bitmap_layer;
   
-//new storage for stops and routes
+//storage for stops and routes
 char **stopList;
 char **routeList;
 

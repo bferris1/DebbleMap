@@ -288,7 +288,7 @@ Pebble.addEventListener('webviewclosed', function(e) {
 
 //event listener to open configuration page
 Pebble.addEventListener('showConfiguration', function() {
-  var url = 'http://debblemap.xyz/pebble2.php#/?system='+systemCode;
+  var url = 'http://moufee.com/pebble2.php#/?system='+systemCode;
 
   Pebble.openURL(url);
 });

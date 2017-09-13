@@ -24,8 +24,6 @@ static uint16_t menu_get_num_rows_callback(MenuLayer *menu_layer, uint16_t secti
 static int16_t menu_layer_get_cell_height_callback(MenuLayer *menu_layer, MenuIndex *cell_index, void *callback_context){
     return graphics_text_layout_get_content_size(stopList[cell_index->row], fonts_get_system_font(FONT_KEY_GOTHIC_24_BOLD), PBL_IF_ROUND_ELSE(GRect(0,0,176,180), GRect(0, 0, 140, 100)), GTextOverflowModeWordWrap, PBL_IF_ROUND_ELSE(GTextAlignmentCenter, GTextAlignmentLeft)).h+8;
   
-  //return 80;
-  
 }
 
 static void menu_draw_row_callback(GContext* ctx, const Layer *cell_layer, MenuIndex *cell_index, void *data) {
