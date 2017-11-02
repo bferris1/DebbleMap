@@ -216,7 +216,7 @@ Pebble.addEventListener("appmessage",function(e) {
     //todo: log these out for debugging
     if(data.length!==0&&data.etas.length!==null&&data.etas.length!==0&&data.etas[stopID].etas!==null&&data.etas[stopID].etas.length!==0){
       var stopETAs = data.etas[stopID].etas;
-      console.log(stopETAs[0].route + stopETAs[0].color);
+//       console.log(stopETAs[0].route + stopETAs[0].color);
       
       getRoutes(function(routes){
           
