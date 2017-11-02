@@ -216,7 +216,7 @@ Pebble.addEventListener("appmessage",function(e) {
     //todo: log these out for debugging
     if(data.length!==0&&data.etas.length!==null&&data.etas.length!==0&&data.etas[stopID].etas!==null&&data.etas[stopID].etas.length!==0){
       var stopETAs = data.etas[stopID].etas;
-      //console.log(stopETAs[0].route + stopETAs[0].color);
+      console.log(stopETAs[0].route + stopETAs[0].color);
       
       getRoutes(function(routes){
           
@@ -228,9 +228,11 @@ Pebble.addEventListener("appmessage",function(e) {
         for(var etaIndex=0;etaIndex<stopETAs.length;etaIndex++){
           //var currentRouteID = stopETAs[etaIndex].route;
           //loop through routes to find which route the eta referrs to
+          var found = false;
           for (var routeIndex=0;routeIndex<routes.length;routeIndex++){
             //check for a match and stop searching if match is found
             if(routes[routeIndex].id===stopETAs[etaIndex].route){
+              found = true;
               //console.log("Route ID " + stopETAs[etaIndex].route + " is "+routes[routeIndex].name );
               //console.log(routes[routeIndex].name + " eta: "+stopETAs[etaIndex].avg);
               //format the text to go with the eta number
@@ -238,7 +240,6 @@ Pebble.addEventListener("appmessage",function(e) {
                 case 0:
                   busETAsToSend[etaIndex+2]=routes[routeIndex].name + "\nArriving Now";
                   break;
-                  
                 case 1:
                   busETAsToSend[etaIndex+2]=routes[routeIndex].name + "\nETA: "+stopETAs[etaIndex].avg + " minute";
                   break;
@@ -247,7 +248,10 @@ Pebble.addEventListener("appmessage",function(e) {
               }
               break;
             }
-          } 
+          }
+          if (!found){
+            busETAsToSend[etaIndex+2]="Unknown"+ "\nETA: "+stopETAs[etaIndex].avg + " minutes"; // if we can't figure out what route it refers to
+          }
         }
         
         busETAsToSend[0]=1;//this indicates the type of data contained in the array

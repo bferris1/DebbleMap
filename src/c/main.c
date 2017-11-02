@@ -84,6 +84,9 @@ static void in_received_handler(DictionaryIterator *received, void *context) {
       gbitmap_destroy(s_bus_icon);
       bitmap_layer_destroy(s_bitmap_layer);
       window_destroy(splash_window);
+      //maybe set splash window/bitmap equal to null here
+      //so that they can be distroyed if not null in deinit()
+      //i.e the app is closed before data is loaded
       
     }
     
@@ -95,6 +98,7 @@ static void in_received_handler(DictionaryIterator *received, void *context) {
     tuple = dict_find(received, 1);
     numETAs = tuple->value->int16;
     routeList = malloc(numETAs*sizeof(char *));
+    //todo: remove unnecessary if statement
     if(numETAs>0){
       for(int j = 0;j<numETAs;j++){
         tuple = dict_find(received, j+2);
